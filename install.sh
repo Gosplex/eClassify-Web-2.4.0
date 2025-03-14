@@ -14,12 +14,13 @@ status_message() {
 # Install NVM
 
 # if [ ! -f nvm.sh ]; then
-  status_message "Installing NVM"
-  wget -O nvm.sh https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+  wget -O nvm.sh https://raw.githubusercontent.com/creationix/nvm/master/install.sh
+  bash nvm.sh
 
   # Load NVM
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
   # Install Node.js
   status_message "Installing Node.js"
